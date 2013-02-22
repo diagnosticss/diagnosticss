@@ -6,10 +6,10 @@ potentially invalid, inaccessible or erroneous HTML markup.
 Diagnosticss highlights the following problems:
 
 * inline styles
-* partially broken links
+* invalid links
 * empty elements
-* deprecated elements
 * elements missing required attributes
+* deprecated elements
 
 ## Installation
 
@@ -33,3 +33,10 @@ diagnosticss CSS into html page.
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+### Ideas, TODOs
+
+* usage examples (rails, sinatra)
+* bookmarklet
+* configuration? (ability to disable/enable some of inspections)
+* documentation on selectors

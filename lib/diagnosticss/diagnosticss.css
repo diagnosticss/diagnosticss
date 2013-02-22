@@ -45,6 +45,10 @@ textarea:not([name]), textarea[name=""] {
   outline: 5px solid red;
 }
 
+input[type="submit"]:not([name]) {
+  outline: none;
+}
+
 input[type="submit"]:not([value]) {
   outline: 5px solid red;
 }

@@ -1,3 +1,69 @@
-.diagnosticss {
-  outline: 1px dotted red;
+/* inline styles */
+[style] {
+  outline: 5px solid red;
+}
+
+/* links */
+a:not([href]), a[href=""] {
+  outline: 5px solid red;
+}
+
+a[href="#"], a[href^="javascript"] {
+  outline: 5px solid yellow;
+}
+
+a[target] {
+  outline: 5px solid yellow;
+}
+
+/* empty elements */
+li:empty, p:empty, td:empty, th:empty {
+  outline: 5px solid yellow;
+}
+
+/* images */
+img:not([alt]) {
+  outline: 5px solid red;
+}
+
+img:not([width]):not([height]) {
+  outline: 5px solid red;
+}
+
+/* forms */
+form:not([action]) {
+  outline: 5px solid red;
+}
+
+input:not([type]), textarea:not([rows]):not([cols]) {
+  outline: 5px solid red;
+}
+
+input:not([name]), input[name=""],
+select:not([name]), select[name=""],
+textarea:not([name]), textarea[name=""] {
+  outline: 5px solid red;
+}
+
+input[type="submit"]:not([value]) {
+  outline: 5px solid red;
+}
+
+label:not([for]), label[for=""] {
+  outline: 5px solid yellow;
+}
+
+/* deprecated elements */
+acronym, applet, basefont, bgsound, big, center, dir, font,
+frame, frameset, isindex, listing, multicol, nextid, nobr,
+noembed, noframes, plaintext, rb, s, spacer, strike, tt, u,
+xmp, marquee, blink {
+  outline: 5px solid red;
+}
+
+/* print styles only */
+@media print {
+  form {
+    outline: 5px solid red;
+  }
 }

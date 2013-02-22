@@ -17,11 +17,23 @@ Diagnosticss highlights the following problems:
 
 Add this line to your application's Gemfile:
 
-    gem 'diagnosticss', :group => :development
+    gem 'diagnosticss',
+      :git => 'git://github.com/fs/diagnosticss.git',
+      :group => :development
 
 And then execute:
 
     $ bundle install
+
+### Sinatra
+
+Add diagnosticss middleware into your application:
+
+    require "diagnosticss"
+    ...
+    class App < Sinatra::Base
+      use Diagnosticss::Middleware
+      ...
 
 ## Usage
 

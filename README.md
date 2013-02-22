@@ -1,9 +1,9 @@
-# Diagnosticss
+# DiagnostiCSS
 
 Diagnostic CSS stylesheet that helps visually detect any
 potentially invalid, inaccessible or erroneous HTML markup.
 
-Diagnosticss highlights the following problems:
+DiagnostiCSS highlights the following problems:
 
 * inline styles
 * invalid links
@@ -17,9 +17,11 @@ Diagnosticss highlights the following problems:
 
 Add this line to your application's Gemfile:
 
-    gem 'diagnosticss',
-      :git => 'git://github.com/fs/diagnosticss.git',
-      :group => :development
+```ruby
+gem 'diagnosticss',
+  :git => 'git://github.com/fs/diagnosticss.git',
+  :group => :development
+```
 
 And then execute:
 
@@ -29,15 +31,17 @@ And then execute:
 
 Add diagnosticss middleware into your application:
 
-    require "diagnosticss"
-    ...
-    class App < Sinatra::Base
-      use Diagnosticss::Middleware
-      ...
+```ruby
+require "diagnosticss"
+...
+class App < Sinatra::Base
+  use Diagnosticss::Middleware
+...
+```
 
 ## Usage
 
-Diagnosticss CSS will be injected into html page if you have 'diagnosticss' gem
+DiagnostiCSS CSS will be injected into html page if you have 'diagnosticss' gem
 in Gemfile.
 
 ## Contributing
@@ -50,7 +54,5 @@ in Gemfile.
 
 ### Ideas, TODOs
 
-* usage examples (rails, sinatra)
-* bookmarklet
 * configuration? (ability to disable/enable some of inspections)
 * documentation on selectors

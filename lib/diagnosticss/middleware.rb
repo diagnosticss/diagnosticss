@@ -49,7 +49,7 @@ module Diagnosticss
     end
 
     def css
-      %{<link href="#{CSS_PATH}" media="screen" rel="stylesheet" type="text/css" />\n}
+      %{<link href="#{CSS_PATH}" media="all" rel="stylesheet" type="text/css" />\n}
     end
   end
 end

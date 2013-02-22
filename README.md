@@ -13,6 +13,8 @@ Diagnosticss highlights the following problems:
 
 ## Installation
 
+### Rails
+
 Add this line to your application's Gemfile:
 
     gem 'diagnosticss', :group => :development
@@ -23,8 +25,8 @@ And then execute:
 
 ## Usage
 
-Add `?diagnosticss=1` parameter to any html GET request to inject
-diagnosticss CSS into html page.
+Diagnosticss CSS will be injected into html page if you have 'diagnosticss' gem
+in Gemfile.
 
 ## Contributing
 

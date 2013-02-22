@@ -17,18 +17,17 @@ module Diagnosticss
         status, headers, body = @app.call(env)
         @response = Rack::Response.new(body, status, headers)
 
-        inject_css if response_okay_to_modify?
+        inject_css if html_request?
       end
 
-      return @response.to_a
+      @response.to_a
     end
 
     private
 
-    def response_okay_to_modify?
+    def html_request?
       content_type, charset = @response.content_type.split(";")
-      diagnosticss = @request.params['diagnosticss']
-      @response.ok? && MIME_TYPES.include?(content_type) && diagnosticss
+      MIME_TYPES.include?(content_type)
     end
 
     def diagnosticss_stylesheet_request?

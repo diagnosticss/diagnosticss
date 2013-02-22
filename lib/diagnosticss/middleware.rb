@@ -12,7 +12,7 @@ module Diagnosticss
 
       if diagnosticss_stylesheet_request?
         body = File.read(File.dirname(__FILE__) + CSS_PATH)
-        @response = Rack::Response.new(body, 200, {})
+        @response = Rack::Response.new(body, 200, 'Content-Type' => 'text/css')
       else
         status, headers, body = @app.call(env)
         @response = Rack::Response.new(body, status, headers)
@@ -36,7 +36,7 @@ module Diagnosticss
 
     def inject_css
       full_body = @response.body.join
-      full_body.sub! /<\/body>/, css + '</body>'
+      full_body.sub! /<\/head>/, css + '</head>'
 
       @response["Content-Length"] = full_body.bytesize.to_s
 
@@ -48,7 +48,7 @@ module Diagnosticss
     end
 
     def css
-      %{<link href="#{CSS_PATH}" media="all" rel="stylesheet" type="text/css" />\n}
+      %{<link href="#{CSS_PATH}" media="all" rel="stylesheet" />\n}
     end
   end
 end

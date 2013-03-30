@@ -11,6 +11,8 @@ DiagnostiCSS highlights the following problems:
 * elements missing required attributes
 * deprecated elements
 
+Sponsored by [Flatstack](http://www.flatstack.com/)
+
 ## Installation
 
 ### Rails
@@ -19,7 +21,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'diagnosticss',
-  :git => 'git://github.com/fs/diagnosticss.git',
+  :git => 'git://github.com/diagnosticss/diagnosticss.git',
   :group => :development
 ```
 

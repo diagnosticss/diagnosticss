@@ -11,7 +11,7 @@ DiagnostiCSS highlights the following problems:
 * elements missing required attributes
 * deprecated elements
 
-Sponsored by [Flatstack](http://www.flatstack.com/)
+Sponsored by [Flatstack](http://flatstack.com/).
 
 ## Installation
 
@@ -21,8 +21,8 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'diagnosticss',
-  :git => 'git://github.com/diagnosticss/diagnosticss.git',
-  :group => :development
+  git: 'git://github.com/diagnosticss/diagnosticss.git',
+  group: :development
 ```
 
 And then execute:
@@ -34,11 +34,12 @@ And then execute:
 Add diagnosticss middleware into your application:
 
 ```ruby
-require "diagnosticss"
-...
+require 'diagnosticss'
+
 class App < Sinatra::Base
   use Diagnosticss::Middleware
-...
+  # ...
+end
 ```
 
 ## Usage
@@ -56,5 +57,8 @@ in Gemfile.
 
 ### Ideas, TODOs
 
-* configuration? (ability to disable/enable some of inspections)
+* build minified version (bookmarket issue)
+* cool rgba() colors
+* visible alerts (generated `content:`)
 * documentation on selectors
+* configuration? (ability to disable/enable some of inspections)

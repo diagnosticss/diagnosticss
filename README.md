@@ -56,8 +56,6 @@ in Gemfile.
 
 ### Ideas, TODOs
 
-* SCSS
-* visible alerts (generated `content:`)
 * documentation on selectors
 * tests/specs
 * configuration? (ability to disable/enable some of inspections)

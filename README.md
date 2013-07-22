@@ -51,7 +51,8 @@ in Gemfile.
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+5. Don't forget to run `rake compile` after making any changes to stylesheet
+6. Create new Pull Request
 
 ### Ideas, TODOs
 

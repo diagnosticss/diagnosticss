@@ -58,5 +58,6 @@ in Gemfile.
 * SCSS
 * visible alerts (generated `content:`)
 * documentation on selectors
+* tests/specs
 * build minified version
 * configuration? (ability to disable/enable some of inspections)

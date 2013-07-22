@@ -10,7 +10,8 @@ Gem::Specification.new do |gem|
   gem.email         = ["nicck.olay@gmail.com", "vazilla@gmail.com"]
   gem.description   = %q{Diagnostic CSS stylesheet that helps visually detect any potentially invalid, inaccessible or erroneous HTML markup.}
   gem.summary       = %q{Diagnostic CSS stylesheet that helps visually detect any potentially invalid, inaccessible or erroneous HTML markup.}
-  gem.homepage      = ""
+  gem.homepage      = "http://diagnosticss.github.io/"
+  gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

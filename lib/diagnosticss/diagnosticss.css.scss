@@ -1,52 +1,100 @@
-/* variables */
+/* variables & mixins */
 $error: #e74c3c;
 $warning: #f1c40f;
+$noticeBg: #ecf0f1;
+$noticeColor: #2c3e50;
+
+%notice {
+  &:hover:before {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 32000;
+    padding: 12px 16px 10px;
+    font: 18px/1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+    text-shadow: none;
+    text-transform: none;
+    text-align: center;
+    background: $noticeBg;
+    color: $noticeColor;
+  }
+}
+
+%error {
+  outline: 5px solid $error;
+}
+
+%warning {
+  outline: 5px solid $warning;
+}
+
+@mixin error($message) {
+  @extend %notice;
+  @extend %error;
+  &:hover:before {
+    content: $message;
+  }
+}
+
+@mixin warning($message) {
+  @extend %notice;
+  @extend %warning;
+  &:hover:before {
+    content: $message;
+  }
+}
 
 /* inline styles */
 [style] {
-  outline: 5px solid $error;
+  @include error('Avoid inline styles');
 }
 
 /* links */
 a:not([href]), a[href=""] {
-  outline: 5px solid $error;
+  @include error('Link without (or empty) href attribute');
 }
 
 a[href="#"], a[href^="javascript"] {
-  outline: 5px solid $warning;
+  @include warning("Link with questionable href attribute (" attr(href) ")");
 }
 
 a[target] {
-  outline: 5px solid $warning;
+  @include warning("Link with target attribute (" attr(target) ")");
 }
 
 /* empty elements */
 li:empty, p:empty, td:empty, th:empty {
-  outline: 5px solid $warning;
+  @include warning("Empty element");
 }
 
 /* images */
+/* looks like images can't use generated `content` in pseudo-elements */
 img:not([alt]) {
-  outline: 5px solid $error;
+  @extend %warning;
 }
 
 img:not([width]):not([height]) {
-  outline: 5px solid $error;
+  @extend %warning;
 }
 
 /* forms */
 form:not([action]) {
-  outline: 5px solid $error;
+  @include error("Missing type attribute");
 }
 
-input:not([type]), textarea:not([rows]):not([cols]) {
+input:not([type]) {
   outline: 5px solid $error;
+  @include error("Missing type attribute");
+}
+
+textarea:not([rows]):not([cols]) {
+  @include error("Missing rows and cols attributes");
 }
 
 input:not([name]), input[name=""],
 select:not([name]), select[name=""],
 textarea:not([name]), textarea[name=""] {
-  outline: 5px solid $error;
+  @include error("Missing name attribute");
 }
 
 input[type="submit"]:not([name]) {
@@ -54,11 +102,12 @@ input[type="submit"]:not([name]) {
 }
 
 input[type="submit"]:not([value]) {
-  outline: 5px solid $error;
+  @include error("Missing value attribute");
 }
 
 label:not([for]), label[for=""] {
   outline: 5px solid $warning;
+  @include warning("Missing for attribute");
 }
 
 /* deprecated elements */
@@ -66,7 +115,7 @@ acronym, applet, basefont, bgsound, big, center, dir, font,
 frame, frameset, isindex, listing, multicol, nextid, nobr,
 noembed, noframes, plaintext, rb, s, spacer, strike, tt, u,
 xmp, marquee, blink {
-  outline: 5px solid $error;
+  @include error("Deprecated element");
 }
 
 /* print styles only */

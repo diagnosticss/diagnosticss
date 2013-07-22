@@ -1,48 +1,48 @@
 /* inline styles */
 [style] {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 /* links */
 a:not([href]), a[href=""] {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 a[href="#"], a[href^="javascript"] {
-  outline: 5px solid yellow;
+  outline: 5px solid #f1c40f;
 }
 
 a[target] {
-  outline: 5px solid yellow;
+  outline: 5px solid #f1c40f;
 }
 
 /* empty elements */
 li:empty, p:empty, td:empty, th:empty {
-  outline: 5px solid yellow;
+  outline: 5px solid #f1c40f;
 }
 
 /* images */
 img:not([alt]) {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 img:not([width]):not([height]) {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 /* forms */
 form:not([action]) {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 input:not([type]), textarea:not([rows]):not([cols]) {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 input:not([name]), input[name=""],
 select:not([name]), select[name=""],
 textarea:not([name]), textarea[name=""] {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 input[type="submit"]:not([name]) {
@@ -50,11 +50,11 @@ input[type="submit"]:not([name]) {
 }
 
 input[type="submit"]:not([value]) {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 label:not([for]), label[for=""] {
-  outline: 5px solid yellow;
+  outline: 5px solid #f1c40f;
 }
 
 /* deprecated elements */
@@ -62,12 +62,12 @@ acronym, applet, basefont, bgsound, big, center, dir, font,
 frame, frameset, isindex, listing, multicol, nextid, nobr,
 noembed, noframes, plaintext, rb, s, spacer, strike, tt, u,
 xmp, marquee, blink {
-  outline: 5px solid red;
+  outline: 5px solid #e74c3c;
 }
 
 /* print styles only */
 @media print {
   form {
-    outline: 5px solid red;
+    outline: 5px solid #e74c3c;
   }
 }

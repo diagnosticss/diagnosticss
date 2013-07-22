@@ -70,7 +70,7 @@ li:empty, p:empty, td:empty, th:empty {
 /* images */
 /* looks like images can't use generated `content` in pseudo-elements */
 img:not([alt]) {
-  @extend %error;
+  outline: 5px solid $error!important;
 }
 
 img:not([width]):not([height]) {

@@ -55,8 +55,8 @@ in Gemfile.
 
 ### Ideas, TODOs
 
-* build minified version (bookmarket issue)
-* cool rgba() colors
+* SCSS
 * visible alerts (generated `content:`)
 * documentation on selectors
+* build minified version
 * configuration? (ability to disable/enable some of inspections)

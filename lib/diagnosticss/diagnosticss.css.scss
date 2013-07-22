@@ -79,11 +79,10 @@ img:not([width]):not([height]) {
 
 /* forms */
 form:not([action]) {
-  @include error("Missing type attribute");
+  @include error("Missing action attribute");
 }
 
 input:not([type]) {
-  outline: 5px solid $error;
   @include error("Missing type attribute");
 }
 
@@ -106,7 +105,6 @@ input[type="submit"]:not([value]) {
 }
 
 label:not([for]), label[for=""] {
-  outline: 5px solid $warning;
   @include warning("Missing for attribute");
 }
 

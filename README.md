@@ -20,9 +20,7 @@ Sponsored by [Flatstack](http://flatstack.com/).
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'diagnosticss',
-  git: 'git://github.com/diagnosticss/diagnosticss.git',
-  group: :development
+gem 'diagnosticss', github: 'diagnosticss', group: :development
 ```
 
 And then execute:

@@ -83,17 +83,17 @@ form:not([action]) {
 }
 
 input:not([type]) {
-  @include error("Missing type attribute");
+  @extend %error;
 }
 
 textarea:not([rows]):not([cols]) {
-  @include error("Missing rows and cols attributes");
+  @extend %error;
 }
 
 input:not([name]), input[name=""],
 select:not([name]), select[name=""],
 textarea:not([name]), textarea[name=""] {
-  @include error("Missing name attribute");
+  @extend %error;
 }
 
 input[type="submit"]:not([name]) {
@@ -101,7 +101,7 @@ input[type="submit"]:not([name]) {
 }
 
 input[type="submit"]:not([value]) {
-  @include error("Missing value attribute");
+  @extend %error;
 }
 
 label:not([for]), label[for=""] {

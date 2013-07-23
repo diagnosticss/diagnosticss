@@ -1,6 +1,6 @@
 /* variables & mixins */
-$error: #e74c3c;
-$warning: #f1c40f;
+$error: 5px solid #e74c3c;
+$warning: 5px solid #f1c40f;
 $noticeBg: #ecf0f1;
 $noticeColor: #2c3e50;
 
@@ -21,11 +21,11 @@ $noticeColor: #2c3e50;
 }
 
 %error {
-  outline: 5px solid $error;
+  outline: $error;
 }
 
 %warning {
-  outline: 5px solid $warning;
+  outline: $warning;
 }
 
 @mixin error($message) {
@@ -70,7 +70,7 @@ li:empty, p:empty, td:empty, th:empty {
 /* images */
 /* looks like images can't use generated `content` in pseudo-elements */
 img:not([alt]) {
-  outline: 5px solid $error!important;
+  outline: $error!important;
 }
 
 img:not([width]):not([height]) {
@@ -119,6 +119,6 @@ xmp, marquee, blink {
 /* print styles only */
 @media print {
   form {
-    outline: 5px solid $error;
+    outline: $error;
   }
 }

@@ -1,0 +1,124 @@
+/* variables & mixins */
+$error: 5px solid #e74c3c;
+$warning: 5px solid #f1c40f;
+$noticeBg: #ecf0f1;
+$noticeColor: #2c3e50;
+
+%notice {
+  &:hover::before {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 32000;
+    padding: 12px 16px 10px;
+    font: normal normal 18px/1.5 Helvetica Neue, Helvetica, Arial, sans-serif!important;
+    text-shadow: none;
+    text-transform: none;
+    text-align: center;
+    background: $noticeBg;
+    color: $noticeColor;
+  }
+}
+
+%error {
+  outline: $error;
+}
+
+%warning {
+  outline: $warning;
+}
+
+@mixin error($message) {
+  @extend %notice;
+  @extend %error;
+  &:hover::before {
+    content: $message;
+  }
+}
+
+@mixin warning($message) {
+  @extend %notice;
+  @extend %warning;
+  &:hover::before {
+    content: $message;
+  }
+}
+
+/* inline styles */
+[style] {
+  @include error('Avoid inline styles where possible');
+}
+
+/* links */
+a:not([href]), a[href=""] {
+  @include error('Link without (or empty) href attribute');
+}
+
+a[href="#"], a[href^="javascript"] {
+  @include warning("Link with questionable href attribute (" attr(href) ")");
+}
+
+a[target] {
+  @include warning("Link with target attribute (" attr(target) ")");
+}
+
+/* empty elements */
+li:empty, p:empty, td:empty, th:empty {
+  @include warning("Empty element");
+}
+
+/* images */
+/* looks like images can't use generated `content` in pseudo-elements */
+img:not([alt]) {
+  outline: $error!important;
+}
+
+img:not([width]):not([height]) {
+  @extend %warning;
+}
+
+/* forms */
+form:not([action]) {
+  @include error("Missing action attribute");
+}
+
+input:not([type]) {
+  @include error("Missing type attribute");
+}
+
+textarea:not([rows]):not([cols]) {
+  @include error("Missing rows and cols attributes");
+}
+
+input:not([name]), input[name=""],
+select:not([name]), select[name=""],
+textarea:not([name]), textarea[name=""] {
+  @include error("Missing name attribute");
+}
+
+input[type="submit"]:not([name]) {
+  outline: none;
+}
+
+input[type="submit"]:not([value]) {
+  @include error("Missing value attribute");
+}
+
+label:not([for]), label[for=""] {
+  @include warning("Missing for attribute");
+}
+
+/* deprecated elements */
+acronym, applet, basefont, bgsound, big, center, dir, font,
+frame, frameset, isindex, listing, multicol, nextid, nobr,
+noembed, noframes, plaintext, rb, s, spacer, strike, tt, u,
+xmp, marquee, blink {
+  @include error("Deprecated element");
+}
+
+/* print styles only */
+@media print {
+  form {
+    outline: $error;
+  }
+}

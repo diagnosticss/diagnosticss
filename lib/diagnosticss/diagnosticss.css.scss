@@ -5,13 +5,13 @@ $noticeBg: #ecf0f1;
 $noticeColor: #2c3e50;
 
 %notice {
-  &:hover:before {
+  &:hover::before {
     display: block;
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 32000;
     padding: 12px 16px 10px;
-    font: 18px/1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
+    font: normal normal 18px/1.5 Helvetica Neue, Helvetica, Arial, sans-serif!important;
     text-shadow: none;
     text-transform: none;
     text-align: center;
@@ -31,7 +31,7 @@ $noticeColor: #2c3e50;
 @mixin error($message) {
   @extend %notice;
   @extend %error;
-  &:hover:before {
+  &:hover::before {
     content: $message;
   }
 }
@@ -39,14 +39,14 @@ $noticeColor: #2c3e50;
 @mixin warning($message) {
   @extend %notice;
   @extend %warning;
-  &:hover:before {
+  &:hover::before {
     content: $message;
   }
 }
 
 /* inline styles */
 [style] {
-  @include error('Avoid inline styles');
+  @include error('Avoid inline styles where possible');
 }
 
 /* links */

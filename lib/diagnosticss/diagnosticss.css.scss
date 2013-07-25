@@ -47,7 +47,7 @@ $noticeColor: #2c3e50;
 
 /* inline styles */
 [style] {
-  @include error('Avoid inline styles where possible');
+  @include warning('Avoid inline styles where possible');
 }
 
 /* inline event attributes */

@@ -50,6 +50,31 @@ $noticeColor: #2c3e50;
   @include error('Avoid inline styles where possible');
 }
 
+/* inline event attributes */
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+  @include error('Inline event attributes are definitely a bad idea')
+}
+
 /* links */
 a:not([href]), a[href=""] {
   @include error('Link without (or empty) href attribute');

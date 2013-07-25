@@ -94,7 +94,6 @@ li:empty, p:empty, td:empty, th:empty {
 }
 
 /* images */
-/* looks like images can't use generated `content` in pseudo-elements */
 img:not([alt]) {
   outline: $error!important;
 }

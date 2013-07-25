@@ -6,6 +6,7 @@ potentially invalid, inaccessible or erroneous HTML markup.
 DiagnostiCSS highlights the following problems:
 
 * inline styles
+* inline event attributes
 * invalid links
 * empty elements
 * elements missing required attributes
@@ -13,7 +14,7 @@ DiagnostiCSS highlights the following problems:
 
 Sponsored by [Flatstack](http://flatstack.com/).
 
-## Installation
+## Installation & Usage
 
 ### Rails
 
@@ -29,7 +30,7 @@ And then execute:
 
 ### Sinatra
 
-Add diagnosticss middleware into your application:
+Add DiagnostiCSS middleware into your application:
 
 ```ruby
 require 'diagnosticss'
@@ -40,10 +41,19 @@ class App < Sinatra::Base
 end
 ```
 
-## Usage
+### HTML
 
-DiagnostiCSS CSS will be injected into html page if you have 'diagnosticss' gem
+Include a stylesheet link to the diagnostic css:
+
+```html
+<link rel="stylesheet" href="http://diagnosticss.github.io/css/diagnosticss.css" media="all" />
+```
+
+### Usage with Rails / Sinatra
+
+DiagnostiCSS CSS will be injected automatically in HTML page if you have 'diagnosticss' gem
 in Gemfile.
+
 
 ## Contributing
 

@@ -46,7 +46,7 @@ end
 Include a stylesheet link to the diagnostic css:
 
 ```html
-<link rel="stylesheet" href="http://diagnosticss.github.io/css/diagnosticss.css" media="all" />
+<link rel="stylesheet" href="//diagnosticss.github.io/css/diagnosticss.css" media="all" />
 ```
 
 ### Usage with Rails / Sinatra

@@ -269,8 +269,8 @@ so future support cannot be guaranteed.
 */
 acronym, applet, basefont, bgsound, big, center, dir, font,
 frame, frameset, isindex, listing, multicol, nextid, nobr,
-noembed, noframes, plaintext, rb, s, spacer, strike, tt, u,
-xmp, marquee, blink {
+noembed, noframes, plaintext, rb, spacer, strike, tt, xmp,
+marquee, blink {
   @include error("Deprecated element");
 }
 

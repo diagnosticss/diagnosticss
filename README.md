@@ -64,6 +64,4 @@ in Gemfile.
 
 ### Ideas, TODOs
 
-* documentation on selectors
-* tests/specs
 * configuration? (ability to disable/enable some of inspections)

@@ -29,7 +29,7 @@ Writing inline styles is almost the same as writing something like this:
 
 `<font><big><marquee>BOOOOOOOOYA</marquee></big></font>`
 
-However, inline styles are shown as a `warning` because in real world
+However, inline styles are shown as a 'warning' because in real world
 applications many JavaScript libraries/components/plugins use inline styles
 to accomplish their functionality.
 
@@ -105,7 +105,7 @@ a:not([href]), a[href=""] {
 #### Links with questionable `href` attribute (`#`, `javascript:;`)
 
 `href` attribute specifies the URL of the page the link goes to.
-However `#` and `javascript` URLs will take you nowhere.
+However, `#` and `javascript` URLs will take you nowhere.
 
 Please use more appropriate elements instead: `<button>` for actions,
 something like `<span class="more-examples">` for pseudo-links.
@@ -172,7 +172,7 @@ li:empty, p:empty, td:empty, th:empty {
 Images
 ==========================================================
 
-Images without `alt` attribute are bad for accessability,
+Images with no `alt` attribute are bad for accessability,
 your karma, and teeth.
 
     <img src="http://placekitten.com/400/200" width="400" height="200" />

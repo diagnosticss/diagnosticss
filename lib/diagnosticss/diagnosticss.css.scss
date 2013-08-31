@@ -7,12 +7,10 @@ potentially invalid, inaccessible or erroneous HTML markup.
 
 DiagnostiCSS highlights the following problems:
 
-* [inline styles](#inline-styles)
-* [inline event attributes](#inline-event-attributes)
+* [inline styles](#inline-styles) and [event attributes](#inline-event-attributes)
 * [invalid links](#invalid-links)
-* [empty elements](#empty-elements)
-* [elements missing required attributes](#forms-inputs)
-* [deprecated elements](#deprecated-elements)
+* [empty](#empty-elements) or [deprecated](#deprecated-elements) elements
+* [elements missing required attributes](#images)
 
 Sponsored by [Flatstack](http://flatstack.com/).
 
@@ -93,7 +91,7 @@ In short, avoid inline event attributes and handle events via
 Invalid Links
 ==========================================================
 
-#### Links with without (or empty) href attributes
+#### Links without (or empty) href attribute
 
     <a>The Old Man</a>
     <a href="">Bob Morton</a>
@@ -150,7 +148,7 @@ Why do you need an empty `<li>` or `<p>`?
 
     <p></p>
 
-Instead of empty `<td>` or `<th>` `colspan` attribute should be used.
+Instead of empty `<td>` or `<th>` you should use `colspan` attribute.
 
     <table>
       <tr>
@@ -175,7 +173,7 @@ Images
 ==========================================================
 
 Images without `alt` attribute are bad for accessability,
-your karma, and your teeth.
+your karma, and teeth.
 
     <img src="http://placekitten.com/400/200" width="400" height="200" />
 */
@@ -201,13 +199,34 @@ img:not([width]):not([height]) {
 Forms & Inputs
 ==========================================================
 
-Form `action` attribute is required
+Always set `type` and `name` attributes for `input`,
+`rows` and `cols` attributes for `textarea`. Also
+don't forget about specifing correct `for` attribute
+for `label`.
 
-    <form></form>
+
+    <div>
+      <input value="Input with no type">
+    </div>
+    <div>
+      <textarea>Textarea without rows and cols</textarea>
+    </div>
+    <div>
+      <input type="text" value="Input with no name">
+    </div>
+    <div>
+      <input type="text" name="" value="Input with empty name">
+    </div>
+    <div>
+      <input type="submit"> <!-- submit with no value -->
+    </div>
+    <div>
+      <label>Label with no for</label>
+    </div>
+    <div>
+      <label for="">Label with empty for</label>
+    </div>
 */
-form:not([action]) {
-  @include error("Missing action attribute");
-}
 
 input:not([type]) {
   @extend %error;
@@ -227,7 +246,8 @@ input[type="submit"]:not([name]) {
   outline: none;
 }
 
-input[type="submit"]:not([value]) {
+input[type="submit"]:not([value]),
+input[type="submit"]:not([name]):not([value]) {
   @extend %error;
 }
 
@@ -238,6 +258,12 @@ label:not([for]), label[for=""] {
 /*
 Deprecated Elements
 ==========================================================
+
+Older HTML tags that have been superseded by other more functional
+or flexible alternatives (whether as HTML or as CSS ) are declared as deprecated.
+Browsers should continue to support deprecated tags and attributes,
+but eventually these tags are likely to become obsolete and
+so future support cannot be guaranteed.
 
     <blink>Thank you for your cooperation. Good night.</blink>
 */

@@ -5,12 +5,10 @@ potentially invalid, inaccessible or erroneous HTML markup.
 
 DiagnostiCSS highlights the following problems:
 
-* inline styles
-* inline event attributes
+* inline styles and event attributes
 * invalid links
-* empty elements
+* empty or deprecated elements
 * elements missing required attributes
-* deprecated elements
 
 Sponsored by [Flatstack](http://flatstack.com/).
 
@@ -66,6 +64,4 @@ in Gemfile.
 
 ### Ideas, TODOs
 
-* documentation on selectors
-* tests/specs
 * configuration? (ability to disable/enable some of inspections)

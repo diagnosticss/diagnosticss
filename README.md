@@ -22,13 +22,14 @@ Add this line to your application's Gemfile:
 gem 'diagnosticss', github: 'diagnosticss', group: :development
 ```
 
-And then execute:
+And run:
 
     $ bundle install
 
 ### Sinatra
 
-Add DiagnostiCSS middleware into your application:
+Add 'diagnosticss' to your application's Gemfile as described above
+and then use DiagnostiCSS middleware in your application:
 
 ```ruby
 require 'diagnosticss'
@@ -46,12 +47,6 @@ Include a stylesheet link to the diagnostic css:
 ```html
 <link rel="stylesheet" href="//diagnosticss.github.io/css/diagnosticss.css" media="all">
 ```
-
-### Usage with Rails / Sinatra
-
-DiagnostiCSS CSS will be injected automatically in HTML page if you have 'diagnosticss' gem
-in Gemfile.
-
 
 ## Contributing
 

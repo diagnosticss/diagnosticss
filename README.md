@@ -48,6 +48,13 @@ Include a stylesheet link to the diagnostic css:
 <link rel="stylesheet" href="//diagnosticss.github.io/css/diagnosticss.css" media="all">
 ```
 
+### Chrome Extension
+
+Yep. This is it.
+Courtesy of [@nicck](https://github.com/nicck), [@kamilhism](https://github.com/kamilhism).
+Install it from
+[Chrome Webstore](https://chrome.google.com/webstore/detail/diagnosticss/ekpmkpffmmchjaopplcmdadmdhibpmdi)
+
 ## Contributing
 
 1. Fork it

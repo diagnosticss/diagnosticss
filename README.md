@@ -53,7 +53,7 @@ Include a stylesheet link to the diagnostic css:
 Yep. This is it.
 Courtesy of [@nicck](https://github.com/nicck), [@kamilhism](https://github.com/kamilhism).
 Install it from
-[Chrome Webstore](https://chrome.google.com/webstore/detail/diagnosticss/ekpmkpffmmchjaopplcmdadmdhibpmdi)
+[Chrome Webstore](https://chrome.google.com/webstore/detail/diagnosticss/ekpmkpffmmchjaopplcmdadmdhibpmdi).
 
 ## Contributing
 

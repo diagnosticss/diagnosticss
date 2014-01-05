@@ -38,7 +38,7 @@ to accomplish their functionality.
     </p>
 */
 
-[style] {
+[style]:not([style=""]) {
   @include warning('Avoid inline styles where possible');
 }
 
